@@ -1,0 +1,25 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation libs.junit
+    implementation libs.guava
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.6'
+    implementation 'org.mindrot:jbcrypt:0.4'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    // ✅ Correct package path for your main class
+    mainClass = 'ticket.booking.App'
+}
